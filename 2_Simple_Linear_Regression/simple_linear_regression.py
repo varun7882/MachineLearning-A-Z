@@ -33,18 +33,17 @@ regressor.fit(X_train, y_train)
 # Predicting the Test set results
 y_pred = regressor.predict(X_test)
 
-# Visualising the Training set results
-plt.scatter(X_train, y_train, color = 'red')
-plt.plot(X_train, regressor.predict(X_train), color = 'blue')
-plt.title('Salary vs Experience (Training set)')
-plt.xlabel('Years of Experience')
-plt.ylabel('Salary')
-plt.show()
-
-# Visualising the Test set results
-plt.scatter(X_test, y_test, color = 'red')
-plt.plot(X_train, regressor.predict(X_train), color = 'blue')
-plt.title('Salary vs Experience (Test set)')
-plt.xlabel('Years of Experience')
-plt.ylabel('Salary')
+# Visualising the results
+f, ((ax1, ax2), (ax3, ax4)) = plt.subplots(2, 2, sharex='col', sharey='row')
+f.suptitle('All figures')
+ax1.scatter(X_train, y_train, color = 'red')
+ax1.set_title("Training Data")
+ax2.scatter(X_train, y_train, color = 'red')
+ax2.plot(X_train, regressor.predict(X_train), color = 'blue')
+ax2.set_title("Regression Line on Training Data")
+ax3.scatter(X_test, y_test, color = 'red')
+ax3.set_title("Test Data")
+ax4.scatter(X_test, y_test, color = 'red')
+ax4.plot(X_train, regressor.predict(X_train), color = 'blue')
+ax4.set_title("Regression line fittting on Test Data")
 plt.show()

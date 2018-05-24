@@ -40,6 +40,7 @@ from sklearn.metrics import confusion_matrix
 cm = confusion_matrix(y_test, y_pred)
 print 'confusion matrix :'
 print cm
+
 '''
 # Visualising the Training set results
 from matplotlib.colors import ListedColormap
@@ -77,6 +78,7 @@ plt.ylabel('Estimated Salary')
 plt.legend()
 plt.show()
 '''
+
 from sklearn.metrics import f1_score
 print 'f-score is : '
 print f1_score(y_test,y_pred)
